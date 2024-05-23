@@ -1,0 +1,309 @@
+/* global attributes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poetsen";
+}
+
+:root {
+  --bg-color: rgb(86,128,233);
+  --second-bg-color: 
+}
+
+body {
+  background: rgb(86,128,233);
+  background: radial-gradient(circle, rgba(86,128,233,1) 0%, rgba(132,206,235,1) 35%, rgba(136,96,208,1) 100%);
+  color: #f8f4f3;
+}
+
+/* Element Selectors */
+/* Setting background color for entire body */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* styling head logo */
+.logo {
+  position: relative;
+  font-size: 25px;
+  color: #f9fafd;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 75px;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* styling for navigation elements */
+.navbar a {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+}
+
+/* style on cursor hover */
+.navbar a:hover,
+.navbar a.active {
+  color: #5ab9ea;
+}
+
+/* Styling for heading in the home section */
+.home {
+  height: 100vh;
+  background: url(home2.jpg-modified.png) no-repeat;
+  background-position-y: 320px;
+  background-position-x: 810px;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.home-container {
+  max-width: 600px;
+}
+
+.home-container h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* .home-container h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+} 
+needs animation: (showRight 1s ease forwards) and animation: delay 1s*/
+
+/* Styling for sentence in the home section */
+.home-container h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #5680e9;
+}
+
+/* Styling for paragraph in the home section */
+.home-container p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+
+/* Styling for buttons container in the home section */
+.home-container .button-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+/* Styling for buttons in the home section */
+.button-box a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background: #5680e9;
+  border: 2px solid #5680e9;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #c1c8e4;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+/* Hover effect for buttons */
+.button-box a:hover {
+  color: #5680e9;
+}
+
+/* Styling for second button in the home section */
+.button-box a:nth-child(2) {
+  background: transparent;
+  color: #5680e9;
+}
+
+/* Hover effect for second button */
+.button-box a:nth-child(2):hover {
+  color: #c1c8e4;
+}
+
+/* Pseudo-element for button animation */
+.button-box a:nth-child(2)::before {
+  background: #5680e9;
+}
+
+/* Styling for social icons container */
+.button-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #c1c8e4;
+  z-index: -1;
+  transition: .5s;
+}
+
+/* Styling for social icons */
+.button-box a:hover::before {
+  width: 100%;
+}
+
+/* Pseudo-element for social icon animation */
+.home-ics {
+  position: absolute;
+  bottom: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for hover effect on social icons */
+.home-ics a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #5680e9;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #5680e9;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Hover effect for social icon pseudo-element */
+.home-ics a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #5680e9;
+  z-index: -1;
+  transition: .5s;
+}
+
+/* Styling for hover effect on work pictures */
+.home-ics a:hover {
+  color: #c1c8e4;
+}
+
+/* Hover effect for socials icon pseudo-element */
+.home-ics a:hover:before {
+  width: 100%;
+}
+
+/* Styling for work pictures */
+.workPics {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Styling for hover effect on work pictures */
+.workPics:hover {
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
+  transition: .5s;
+  opacity: 1;
+}
+
+
+/* ID selectors */
+#about, #work, #contact {
+  font-size: 32px;
+  font-weight: 700;
+  color: #5680e9;
+  text-shadow: 
+        -1px -1px 0 #ffffff,  
+        1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+        1px  1px 0 #ffffff;
+}
+
+
+
+
+
+
+
+/* .home-picHover {
+  position: absolute;
+  top: 305px;
+  right: 780px;
+  width: 350px;
+  height: 35%;
+  background: transparent;
+  transition: 3s;
+}
+
+.home-picHover:hover {
+  background: #5680e9;
+  opacity: .8;
+} 
+needs rounded corners*/
+
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+  100% {
+    width: 0;
+  }
+}
+
+/* mobile styling */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav ul li {
+    margin-right: 10px;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+
+  .home {
+    background: url(home2.jpg-modified.png) no-repeat;
+  }
+}
