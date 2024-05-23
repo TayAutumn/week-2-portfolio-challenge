@@ -3,18 +3,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poetsen";
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 :root {
-  --bg-color: rgb(86,128,233);
-  --second-bg-color: 
+  --bg-color: black;
+  --second-bg-color: #363d49;
+  --text-color: #ffffff;
+  --main-color: #b58fe0;
+}
+
+html {
+  font-size: 62.5%;
+  /* overflow: hidden; TURN ON AT THE END*/
 }
 
 body {
-  background: rgb(86,128,233);
-  background: radial-gradient(circle, rgba(86,128,233,1) 0%, rgba(132,206,235,1) 35%, rgba(136,96,208,1) 100%);
-  color: #f8f4f3;
+  background: var(--bg-color);
+  color: var(--text-color)
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
 }
 
 /* Element Selectors */
@@ -24,7 +39,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 10px;
+  padding: 2rem 9%;
   background: transparent;
   display: flex;
   justify-content: space-between;
@@ -34,61 +49,387 @@ body {
 
 /* styling head logo */
 .logo {
-  position: relative;
-  font-size: 25px;
-  color: #f9fafd;
+  font-size: 2.5rem;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
-  margin-left: 75px;
+  /* cursor: default; */
 }
 
-.logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+.heading {
+  text-align: center;
+  font-size: 4.5rem;
+  
 }
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
+}
+
 
 /* styling for navigation elements */
 .navbar a {
-  font-size: 18px;
-  color: #ffffff;
+  font-size: 1.7rem;
+  color: var(--text-color);
   text-decoration: none;
-  font-weight: 500;
-  margin-left: 35px;
-  transition: .3s;
+  margin-left: 3.5rem;
+  transition: 0.3s;
 }
 
 /* style on cursor hover */
 .navbar a:hover,
-.navbar a.active {
-  color: #5ab9ea;
+.navbar a.on {
+  color: var(--main-color);
 }
+
 
 /* Styling for heading in the home section */
 .home {
-  height: 100vh;
-  background: url(home2.jpg-modified.png) no-repeat;
-  background-position-y: 320px;
-  background-position-x: 810px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0 10%;
+  margin-left: 4rem;
 }
 
-.home-container {
-  max-width: 600px;
+.home-img img {
+  width: 35vw;
+}
+
+.home-container h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.home-container h3:nth-child(2) {
+  margin-bottom: 2rem;
+}
+
+span {
+  color: var(--main-color);
 }
 
 .home-container h1 {
-  font-size: 56px;
+  font-size: 5.6rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
-/* .home-container h1::before {
+/* Styling for paragraph in the home section */
+.home-container p {
+  font-size: 1.6rem;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: .2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--main-color);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: .5s ease;
+}
+
+.social-media a:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--main-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1.6rem;
+  color: var(--second-bg-color);
+  letter-spacing: 1rem;
+  font-weight: 600;
+}
+
+.button:hover {
+  box-shadow: none;
+}
+
+.work {
+  background: var(--second-bg-color);
+}
+
+.work h2 {
+  margin-bottom: 4rem;
+}
+
+.work-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.work-container .work-box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  overflow: hidden;
+  display: flex;
+}
+
+.work-box img {
+  width: 100%;
+  transition: .5s ease;
+}
+
+.work-box:hover img {
+  transform: scale(1.1);
+}
+
+.work-box .work-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: .5s ease;
+}
+
+.work-box:hover .work-layer {
+  transform: translateY(0);
+}
+
+.work-layer h4 {
+  font-size: 3rem;
+}
+
+.work-layer p {
+  font-size: 1.6rem;
+  margin: .3rem 0 1rem;
+}
+
+.work-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background: var(--text-color);
+  border-radius: 50%;
+}
+
+.work-layer a i {
+  font-size: 2rem;
+  color: var(--second-bg-color);
+}
+
+.contact h2 {
+  margin: 3rem;
+}
+
+.contact form {
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background: var(--second-bg-color);
+  border-radius: .8rem;
+  margin: .7rem 0;
+}
+
+.contact form .input-box input {
+  width: 49%;
+}
+
+.contact form textarea {
+  resize: none;
+}
+
+.contact form .button {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  background: var(--second-bg-color);
+}
+
+.footer-txt p {
+  font-size: 1.6rem;
+}
+
+.footer-icon a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: .8rem;
+  background: var(--main-color);
+  border-radius: .8rem;
+  transition: .5s ease;
+}
+
+.footer-icon a:hover {
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-icon a i {
+  font-size: 2.5rem;
+  color: var(--second-bg-color);
+}
+
+
+
+
+
+/* mobile styling */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 3%;
+  }
+
+  section {
+    padding: 10rem 3% 2rem;
+  }
+
+  .footer {
+    padding: 2rem;
+  }
+
+  .work {
+    padding-bottom: 7rem;
+  }
+
+  .contact {
+    min-height: auto;
+  }
+}
+  
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .home {
+    flex-direction: column;
+  }
+
+  .home-container h3 {
+    font-size: 2.6rem;
+  }
+
+  .home-container h1 {
+    font-size: 5rem;
+  }
+
+  .home-img img {
+    width: 65vw;
+    margin-top: 4rem;
+  }
+
+  .work h2 {
+    margin-bottom: 3rem;
+  }
+
+  .work h3 {
+    margin-bottom: 3rem;
+  }
+
+  .work-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 617px) {
+  .work-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .contact form .input-box input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 365px) {
+  .home-img img {
+    width: 90vw;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer p {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+
+  /* 
+  
+  DELETED CODE
+  
+  .home-container h1::before {
   content: '';
   position: absolute;
   top: 0;
@@ -96,30 +437,66 @@ body {
   width: 100%;
   height: 100%;
 } 
-needs animation: (showRight 1s ease forwards) and animation: delay 1s*/
+needs animation: (showRight 1s ease forwards) and animation: delay 1s
 
-/* Styling for sentence in the home section */
+Styling for sentence in the home section
 .home-container h3 {
   font-size: 32px;
   font-weight: 700;
   color: #5680e9;
+} 
+
+.home-picHover {
+  position: absolute;
+  top: 305px;
+  right: 780px;
+  width: 350px;
+  height: 35%;
+  background: transparent;
+  transition: 3s;
 }
 
-/* Styling for paragraph in the home section */
-.home-container p {
-  font-size: 16px;
-  margin: 20px 0 40px;
-}
+.home-picHover:hover {
+  background: #5680e9;
+  opacity: .8;
+} 
+needs rounded corners
 
-/* Styling for buttons container in the home section */
-.home-container .button-box {
+
+Styling for buttons container in the home section
+  .home-container .button-box {
   display: flex;
   justify-content: space-between;
   width: 345px;
   height: 50px;
+} 
+
+.home-container .button-box {
+  position: relative;
+  display: flex;
+  justify-content:space-between;
+  width: 34.5;
+  height: 5rem;
 }
 
-/* Styling for buttons in the home section */
+.button-box .button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 100%;
+  background: var(--main-color);
+  border: .2rem solid var(--main-color);
+  border-radius: .8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  color: var(--bg-color);
+}
+
+
+
 .button-box a {
   position: relative;
   display: inline-flex;
@@ -137,33 +514,32 @@ needs animation: (showRight 1s ease forwards) and animation: delay 1s*/
   letter-spacing: 1px;
   z-index: 1;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-/* Hover effect for buttons */
+
 .button-box a:hover {
   color: #5680e9;
 }
 
-/* Styling for second button in the home section */
+
 .button-box a:nth-child(2) {
   background: transparent;
   color: #5680e9;
 }
 
-/* Hover effect for second button */
 .button-box a:nth-child(2):hover {
   color: #c1c8e4;
 }
 
-/* Pseudo-element for button animation */
+
 .button-box a:nth-child(2)::before {
   background: #5680e9;
 }
 
-/* Styling for social icons container */
+
 .button-box a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -171,15 +547,22 @@ needs animation: (showRight 1s ease forwards) and animation: delay 1s*/
   height: 100%;
   background: #c1c8e4;
   z-index: -1;
-  transition: .5s;
+  transition: 0.5s;
 }
-
-/* Styling for social icons */
 .button-box a:hover::before {
   width: 100%;
 }
 
-/* Pseudo-element for social icon animation */
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+} 
+
+Pseudo-element for social icon animation
 .home-ics {
   position: absolute;
   bottom: 40px;
@@ -188,7 +571,7 @@ needs animation: (showRight 1s ease forwards) and animation: delay 1s*/
   justify-content: space-between;
 }
 
-/* Styling for hover effect on social icons */
+Styling for hover effect on social icons 
 .home-ics a {
   position: relative;
   display: inline-flex;
@@ -204,11 +587,11 @@ needs animation: (showRight 1s ease forwards) and animation: delay 1s*/
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
-}
+} 
 
-/* Hover effect for social icon pseudo-element */
+Hover effect for social icon pseudo-element 
 .home-ics a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -216,81 +599,46 @@ needs animation: (showRight 1s ease forwards) and animation: delay 1s*/
   height: 100%;
   background: #5680e9;
   z-index: -1;
-  transition: .5s;
-}
+  transition: 0.5s;
+} 
 
-/* Styling for hover effect on work pictures */
+Styling for hover effect on work pictures
 .home-ics a:hover {
   color: #c1c8e4;
-}
+} 
 
-/* Hover effect for socials icon pseudo-element */
+Hover effect for socials icon pseudo-element 
 .home-ics a:hover:before {
   width: 100%;
 }
 
-/* Styling for work pictures */
+Styling for work pictures 
 .workPics {
   position: relative;
   overflow: hidden;
-}
+} 
 
-/* Styling for hover effect on work pictures */
+Styling for hover effect on work pictures 
 .workPics:hover {
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
-  transition: .5s;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+  transition: 0.5s;
   opacity: 1;
-}
+} 
 
-
-/* ID selectors */
-#about, #work, #contact {
+ID selectors 
+#about,
+#work,
+#contact {
   font-size: 32px;
   font-weight: 700;
   color: #5680e9;
-  text-shadow: 
-        -1px -1px 0 #ffffff,  
-        1px -1px 0 #ffffff,
-        -1px  1px 0 #ffffff,
-        1px  1px 0 #ffffff;
-}
-
-
-
-
-
-
-
-/* .home-picHover {
-  position: absolute;
-  top: 305px;
-  right: 780px;
-  width: 350px;
-  height: 35%;
-  background: transparent;
-  transition: 3s;
-}
-
-.home-picHover:hover {
-  background: #5680e9;
-  opacity: .8;
-} 
-needs rounded corners*/
-
-
-/* KEYFRAMES ANIMATION */
-@keyframes showRight {
-  100% {
-    width: 0;
-  }
-}
-
-/* mobile styling */
-@media screen and (max-width: 768px) {
-  header {
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff 
+    header {
     padding: 10px 0;
   }
-
+  }
+  
   header h1 {
     font-size: 20px;
   }
@@ -303,7 +651,4 @@ needs rounded corners*/
     padding: 30px 0;
   }
 
-  .home {
-    background: url(home2.jpg-modified.png) no-repeat;
-  }
-}
+*/

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
+    <title>Personal Portfolio | Taylor Tilney</title>
     <link rel="stylesheet" href="./Assets/style.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
@@ -13,36 +13,117 @@
     <header class="header">
         <a href="#" class="logo">T.</a>
 
+        <div class="bx bx-menu" id="menu-icon"></div>
+
         <nav class="navbar">
             <a href="#home" class="on">Home</a>
-            <a href="#about">About</a>
+            <!-- <a href="#about">About</a> -->
             <a href="#work">My Work</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main>
-        <section class="home">
+    <!-- <main> -->
+        <section class="home" id="home">
             <div class="home-container">
-                <h1 id=home>Hello, I'm Taylor Tilney</h1>
-                <h3>Junior Developer in Training</h3>
+                <h3>Hello, I'm Taylor Tilney</h3>
+                    <h1><span>Junior Developer</span> in Training</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quae
                     maxime recusandae quibusdam reprehenderit vero sint. Sint eveniet
                     saepe odit a, maxime, ea, asperiores itaque voluptates facere
                     doloribus quis ratione!
                 </p>
-                <div class="button-box">
-                    <a href="#">Hire Me</a>
-                    <a href="#">Let's Chat</a>
+                <div class="social-media">
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
+                    <a href="#"><i class="bx bxl-twitch"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                </div>
+                    <a href="#" class="button">Let's Chat!</a>
                 </div>
 
-                <!-- span class="home-picHover"></span -->
+                <div class="home-img">
+                    <img src="Assets/home2.jpg-modified.png" alt="profile picture">
+                </div>
+        </section>
+    <!-- </main> -->
+        <section class="work" id="work">
+            <h2 class="heading">Latest <span>Project</span></h2>
+
+            <div class="work-container">
+                <div class="work-box">
+                    <img src="Assets/first app.png" alt="first application" height="380"></a>
+                    <div class="work-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <a href="https://tayautumn.github.io/prework-study-guide/"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="work-box">
+                    <img src="Assets/party5.jpg" alt="funky kitty" height="350">
+                    <div class="work-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+            
+                <div class="work-box">
+                    <img src="Assets/party3.jpg" alt="funky kitty2" height="350">
+                    <div class="work-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <div class="work-box">
+                    <img src="Assets/party4.jpg" alt="funky kitty3" height="350">
+                    <div class="work-layer">
+                        <h4>Web Design</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
             </div>
         </section>
-    </main>
 
-    <article>
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me!</span></h2>
+
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Mobile Number">
+                    <input type="text" placeholder="Subject">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Cries to the stars"></textarea>
+                <input type="submit" value="Send Message" class="button">
+            </form>
+
+        </section>
+
+    <footer class="footer">
+        <div class="footer-txt">
+            <p>Made with ❤️ | © 2024 Tay's Website Productions</p>
+        </div>
+
+        <div class="footer-icon">
+            <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
+        </div>
+
+    </footer>
+</body>
+
+</html>
+
+
+<!-- <article>
         <div class="article">
             <h2 id="about">About Me</h2>
             <p>
@@ -59,7 +140,8 @@
         <div class="article">
             <h2 id="work">My Work</h2>
             <img class="workPics" src="Assets/party3.jpg" alt="picture of a funky kitty" width="234" />
-            <a href="https://tayautumn.github.io/prework-study-guide/"><img class="workPics" src="Assets/first app.png" alt="Application 1" width="534" height="320" /></a>
+            <a href="https://tayautumn.github.io/prework-study-guide/"><img class="workPics" src="Assets/first app.png"
+                    alt="Application 1" width="534" height="320" /></a>
             <img class="workPics" src="Assets/party4.jpg" alt="picture of a funky kitty" />
         </div>
 
@@ -72,7 +154,7 @@
             </span>
             <p>
                 <label for="username">Name:</label>
-                <!-- This element has a CSS declaration of `cursor: text` -->
+                This element has a CSS declaration of `cursor: text`
                 <input id="username" type="text" placeholder="First Last" />
             </p>
             <p>
@@ -87,15 +169,4 @@
                 <input class="submit" type="submit" value="Submit" />
             </p>
         </form>
-    </article>
-
-    <footer>
-        <div class="home-ics">
-            <a href="#"><i class="bx bxl-twitter"></i></a>
-            <a href="#"><i class="bx bxl-twitch"></i></a>
-            <a href="#"><i class="bx bxl-linkedin"></i></a>
-        </div>
-    </footer>
-</body>
-
-</html>
+    </article> -->
