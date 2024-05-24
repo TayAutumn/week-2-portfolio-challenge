@@ -4,7 +4,7 @@ This repository contains code for a personal portfolio website created by Taylor
 
 ## Table of Contents
 
-- [About](#about)
+- [Home](#home)
 - [My Work](#work)
 - [Contact Me](#contact)
 
@@ -36,6 +36,7 @@ Include screenshots of the website here.
 ## Acknowledgements
 
 - Boxicons for social media icons.
+- Codehal on youtube: https://www.youtube.com/watch?v=sQoiM7i5Nqc&t=677s
 
 ## License
 
