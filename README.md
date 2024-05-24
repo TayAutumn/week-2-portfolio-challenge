@@ -43,4 +43,4 @@ Include screenshots of the website here.
 This project is licensed under the [MIT License](LICENSE).
 
 ##Deployment
-Here is a link to the deployed website using git:
+Here is a link to the deployed website using git:https://tayautumn.github.io/week-2-portfolio-challenge/
